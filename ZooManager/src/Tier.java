@@ -5,6 +5,16 @@ public class Tier extends Lebewesen {
     private String art;
     private int futterstunde;
     private int futterminute;
+    private int idnummer;
+    
+
+    public int getIdnummer() {
+        return idnummer;
+    }
+
+    public void setIdnummer(int idnummer) {
+        this.idnummer = idnummer;
+    }
 
     public int getGroesse() {
         return groesse;
