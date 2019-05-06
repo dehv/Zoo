@@ -5,40 +5,45 @@
  */
 package zoomanager;
 
+import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
  *
- * @author $CNVI00-8V687DVPLVK9
+ * @author David Brunschier
  */
 public class ZooManager extends Application {
     
+    private Stage primaryStage;
+    
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+        this.primaryStage = primaryStage;
+        mainWindow();
+    }
+    
+    public void mainWindow(){
+        try {
+            FXMLLoader loader = new FXMLLoader(ZooManager.class.getResource("MainWindow.fxml"));
+            AnchorPane pane = loader.load();
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            primaryStage.setMinHeight(400.00);
+            primaryStage.setMinWidth(600.00);
+            
+            InterfaceController interfaceController = loader.getController();
+            interfaceController.setMain(this);
+            
+            Scene scene = new Scene(pane);
+            
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
