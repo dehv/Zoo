@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="zoomanager.InterfaceController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoomanager.InterfaceController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -30,13 +30,13 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Text>
-                              <TableView layoutX="14.0" layoutY="55.0" prefHeight="303.0" prefWidth="200.0">
+                              <TableView fx:id="homeMitarbeiterTable" editable="true" layoutX="14.0" layoutY="55.0" prefHeight="303.0" prefWidth="200.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="C1" />
                                   <TableColumn prefWidth="75.0" text="C2" />
                                 </columns>
                               </TableView>
-                              <TableView layoutX="222.0" layoutY="56.0" prefHeight="303.0" prefWidth="200.0">
+                              <TableView fx:id="homeTiereTable" layoutX="222.0" layoutY="56.0" prefHeight="303.0" prefWidth="200.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="C1" />
                                   <TableColumn prefWidth="75.0" text="C2" />
@@ -45,7 +45,7 @@
                               <Text layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiter" wrappingWidth="198.80337142944336" />
                               <Text layoutX="223.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiere" wrappingWidth="198.80337142944336" />
                               <Text layoutX="430.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veranstaltungen" wrappingWidth="198.80337142944336" />
-                              <ListView layoutX="429.0" layoutY="56.0" prefHeight="304.0" prefWidth="200.0" />
+                              <ListView fx:id="homeVeranstaltungList" layoutX="429.0" layoutY="56.0" prefHeight="304.0" prefWidth="200.0" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -54,31 +54,66 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                              <TableView fx:id="mitarbeiterTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="C1" />
                                   <TableColumn prefWidth="75.0" text="C2" />
                                 </columns>
                               </TableView>
-                              <Button layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                              <Button fx:id="mitarbeiterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                   <Tab text="Tiere">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tiereTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="tierHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Veranstaltungen">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                     </content>
                   </Tab>
                   <Tab text="Gehege">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="gehegeTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="gehegeHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
                   </Tab>
                   <Tab text="Futter">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="futterTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="futterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
                   </Tab>
               </tabs>
             </TabPane>
