@@ -30,16 +30,21 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Text>
-                              <TableView fx:id="homeMitarbeiterTable" editable="true" layoutX="14.0" layoutY="55.0" prefHeight="303.0" prefWidth="200.0">
+                              <TableView fx:id="homeMitarbeiterTable" layoutX="14.0" layoutY="55.0" prefHeight="303.0" prefWidth="200.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
+                                  <TableColumn fx:id="homeMitarbeiterNameCol" prefWidth="75.0" text="Name" />
+                                  <TableColumn fx:id="homeMitarbeiterVornameCol" prefWidth="75.0" text="Vorname" />
+                                    <TableColumn fx:id="homeMitarbeiterArbeitszeitCol" prefWidth="75.0" text="Arbeitszeit" />
                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
                               </TableView>
                               <TableView fx:id="homeTiereTable" layoutX="222.0" layoutY="56.0" prefHeight="303.0" prefWidth="200.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
+                                  <TableColumn prefWidth="75.0" text="Name" />
+                                  <TableColumn prefWidth="75.0" text="Gehege" />
+                                    <TableColumn prefWidth="75.0" text="Futterzeit" />
                                 </columns>
                               </TableView>
                               <Text layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiter" wrappingWidth="198.80337142944336" />
@@ -56,11 +61,16 @@
                            <children>
                               <TableView fx:id="mitarbeiterTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
+                                  <TableColumn fx:id="mitarbeiterNameCol" prefWidth="69.99999713897705" text="Name" />
+                                  <TableColumn fx:id="mitarbeiterVornameCol" prefWidth="75.3333511352539" text="Vorname" />
+                                    <TableColumn fx:id="mitarbeiterPersonalnummerCol" prefWidth="114.66664123535156" text="Personalnummer" />
+                                    <TableColumn fx:id="mitarbeiterArbeitszeitCol" prefWidth="81.33331298828125" text="Arbeitszeit" />
+                                    <TableColumn fx:id="mitarbeiterTelefonCol" prefWidth="77.99993896484375" text="Telefonnr." />
+                                    <TableColumn fx:id="mitarbeiterGeburtsdatumCol" prefWidth="84.66671752929688" text="Geburtsdatum" />
+                                    <TableColumn fx:id="mitarbeiterBerufCol" prefWidth="123.33331298828125" text="Berufsbezeichnung" />
                                 </columns>
                               </TableView>
-                              <Button fx:id="mitarbeiterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                              <Button fx:id="mitarbeiterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#openAddMitarbeiterWindow" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
                            </children>
                         </AnchorPane>
                   </content>

@@ -1,3 +1,5 @@
+package zoomanager;
+
 
 public class Tier extends Lebewesen {
     private int groesse;

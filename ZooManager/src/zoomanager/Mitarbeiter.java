@@ -1,3 +1,7 @@
+package zoomanager;
+
+import java.time.LocalDate;
+
 public class Mitarbeiter extends Lebewesen {
     
     private int monatsgehalt;
@@ -6,9 +10,23 @@ public class Mitarbeiter extends Lebewesen {
     private int endminute;
     private int endstunde;
     private String vorname;
-    private int telefonnummer;
+    private String telefonnummer;
     private String adresse;
     private String beruf;
+    private String personalnummer;
+
+
+    public Mitarbeiter(String vorname, String name, String addresse, String telefonnummer, String beruf, LocalDate geburtsdatum, Geschlecht geschlecht, String personalnummer) {
+        this.vorname = vorname;
+        super.setName(name);
+        this.adresse = adresse;
+        this.telefonnummer = telefonnummer;
+        this.beruf = beruf;
+        super.setGeburtstag(geburtsdatum);
+        super.setGeschlecht(geschlecht);
+        this.personalnummer = personalnummer;
+        
+    }
 
     public int getMonatsgehalt() {
         return monatsgehalt;
@@ -58,11 +76,11 @@ public class Mitarbeiter extends Lebewesen {
         this.vorname = vorname;
     }
 
-    public int getTelefonnummer() {
+    public String getTelefonnummer() {
         return telefonnummer;
     }
 
-    public void setTelefonnummer(int telefonnummer) {
+    public void setTelefonnummer(String telefonnummer) {
         this.telefonnummer = telefonnummer;
     }
 
@@ -82,4 +100,19 @@ public class Mitarbeiter extends Lebewesen {
         this.beruf = beruf;
     }
     
+    public String getName() {
+        return super.getName();
+    }
+
+    public void setName(String name) {
+        super.setName(name);
+    }
+    
+    public String getPersonalnummer() {
+        return personalnummer;
+    }
+
+    public void setPersonalnummer(String personalnummer) {
+        this.personalnummer = personalnummer;
+    }
 }
