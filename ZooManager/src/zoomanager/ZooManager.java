@@ -58,7 +58,7 @@ public class ZooManager extends Application {
 //            interfaceController.homeMitarbeiterArbeitszeitCol.setCellValueFactory(
 //                    new PropertyValueFactory<Mitarbeiter, String>("name")
 //            );
-            
+            // Tabelle auf der Mitarbeiterseite
             interfaceController.mitarbeiterNameCol.setCellValueFactory(
                     new PropertyValueFactory<Mitarbeiter, String>("name")
             );
@@ -85,7 +85,10 @@ public class ZooManager extends Application {
             //Setting Items in Tables
             interfaceController.homeMitarbeiterTable.setEditable(false);
             interfaceController.homeMitarbeiterTable.setItems(mitarbeiter);
+            
             interfaceController.mitarbeiterTable.setItems(mitarbeiter);
+            
+            
             Scene scene = new Scene(pane);
             
             primaryStage.setScene(scene);
