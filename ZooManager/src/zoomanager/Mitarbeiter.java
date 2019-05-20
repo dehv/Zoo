@@ -115,4 +115,9 @@ public class Mitarbeiter extends Lebewesen {
     public void setPersonalnummer(String personalnummer) {
         this.personalnummer = personalnummer;
     }
+    
+    @Override
+    public String toString() {
+        return this.getVorname() + " " + this.getName();
+    }
 }

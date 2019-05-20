@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="417.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoomanager.VeranstaltungInterfaceController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="veranstaltungNameTextField" layoutX="14.0" layoutY="66.0" />
+      <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veranstaltung hinzufügen" wrappingWidth="244.00004069010413">
+         <font>
+            <Font name="Calibri" size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="14.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uhrzeit" />
+      <ChoiceBox fx:id="veranstaltungTagChoiceBox" layoutX="13.0" layoutY="213.0" prefWidth="150.0" />
+      <Text layoutX="13.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tag" />
+      <Button fx:id="veranstaltungFertigButton" layoutX="14.0" layoutY="471.0" mnemonicParsing="false" onAction="#VeranstaltungFertigButtonAction" text="Fertig" />
+      <Button fx:id="veranstaltungAbbrechenButton" layoutX="67.0" layoutY="471.0" mnemonicParsing="false" onAction="#VeranstaltungAbbrechenButtonAction" text="Abbrechen" />
+      <ChoiceBox fx:id="veranstaltungZeitChoiceBox" layoutX="13.0" layoutY="114.0" prefWidth="150.0" />
+      <ListView fx:id="veranstaltungMitarbeiterListView" layoutX="15.0" layoutY="276.0" prefHeight="138.0" prefWidth="200.0" />
+      <Text layoutX="15.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiter" />
+      <Text layoutX="14.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gehege" />
+      <ChoiceBox fx:id="veranstaltungGehegeChoiceBox" layoutX="13.0" layoutY="163.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="veranstaltungMitarbeiterChoiceBox" layoutX="223.0" layoutY="293.0" prefWidth="150.0" />
+      <Text layoutX="223.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiter auswählen" />
+      <Button fx:id="veranstaltungAddMitarbeiterButton" layoutX="223.0" layoutY="332.0" mnemonicParsing="false" onAction="#addMitarbeiterVeranstaltungButtonAction" text="Mitarbeiter hinzufügen" />
+      <Button fx:id="veranstaltungDelMitarbeiterButton" layoutX="15.0" layoutY="426.0" mnemonicParsing="false" onAction="#delMitarbeiterVeranstaltungButtonAction" text="Mitarbeiter entfernen" />
+   </children>
+</AnchorPane>

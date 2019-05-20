@@ -17,6 +17,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import zoomanager.Mitarbeiter;
+import zoomanager.ZooManager;
 
 /**
  * FXML Controller class
@@ -37,7 +39,7 @@ public class InterfaceController {
     @FXML
     private TableView<?> homeTiereTable;
     @FXML
-    private ListView<?> homeVeranstaltungList;
+    ListView<Veranstaltung> homeVeranstaltungList;
     @FXML
      TableView<Mitarbeiter> mitarbeiterTable;
     @FXML
@@ -68,6 +70,26 @@ public class InterfaceController {
     TableColumn<Mitarbeiter, LocalDate> mitarbeiterGeburtsdatumCol;
     @FXML
     TableColumn<Mitarbeiter, String> mitarbeiterBerufCol;
+    @FXML
+    private Button veranstaltungHinzufuegenButton;
+    @FXML
+    TableView<TimeTable> veranstaltungTable;
+    @FXML
+    TableColumn<TimeTable, Integer> veranstaltungTableZeitCol;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung[]> veranstaltungTableMontag;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung> veranstaltungTableDienstag;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung> veranstaltungTableMittwoch;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung> veranstaltungTableDonnerstag;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung> veranstaltungTableFreitag;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung> veranstaltungTableSamstag;
+    @FXML
+     TableColumn<TimeTable, Veranstaltung> veranstaltungTableSonntag;
     
     void setMain(ZooManager zooManager) {
         this.main = zooManager;
@@ -87,6 +109,41 @@ public class InterfaceController {
         
         Stage stage = new Stage();
         stage.setTitle("Neuen Mitarbeiter erstellen");
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @FXML
+    private void openAddVeranstaltungWindow(ActionEvent event) throws IOException {
+        
+        /*
+        Alsooooo.. Das hier ermöglicht den fx:controller beizubehalten aber gleichzeitig auch
+        ZooManager zu übergeben, bevor der Controller initialisiert wird, sodass die Mitarbeiter und Gehege in den Auswahlen zur Verfügung stehen.
+        */
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AddVeranstaltungWindow.fxml"));
+        loader.setControllerFactory(clazz -> {
+            Object controller;
+            try {
+                controller = clazz.getConstructor().newInstance();
+            } catch (ReflectiveOperationException ex) {
+                throw new RuntimeException(ex);
+            }
+            if (controller instanceof VeranstaltungInterfaceController){
+                ((VeranstaltungInterfaceController) controller).setMain(main);
+            }
+             return controller;
+        });
+        // Danke StackOverflow! https://stackoverflow.com/questions/50812115/how-to-give-the-controller-access-to-the-main-app-before-the-initialize-method#
+        Parent root = (Parent) loader.load();
+        
+        
+       
+        
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/style.css");
+        
+        Stage stage = new Stage();
+        stage.setTitle("Neue Veranstaltung erstellen");
         stage.setScene(scene);
         stage.show();
     }

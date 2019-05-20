@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -18,6 +19,10 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import zoomanager.Gehege;
+import zoomanager.Geschlecht;
+import zoomanager.Mitarbeiter;
+import zoomanager.ZooManager;
 
 /**
  *
@@ -56,7 +61,7 @@ public class MitarbeiterInterfaceController implements Initializable {
     
     @FXML
     private void mitarbeiterFertigButtonAction(ActionEvent event) {
-        if (!checkInputs()) {
+        if (checkInputs()) {
         String vorname = mitarbeiterVornameTextField.getText();
         String name = mitarbeiterNameTextField.getText();
         String addresse = mitarbeiterAdresseTextField.getText();
@@ -71,7 +76,12 @@ public class MitarbeiterInterfaceController implements Initializable {
         stage.close();
         }
         else {
-        //TODO Warnung einblenden
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fehlende Werte");
+            alert.setHeaderText(null);
+            alert.setContentText("Bitte geben Sie für alle Felder einen Wert ein und versuchen Sie es nochmal!");
+            
+            alert.showAndWait();
         }
     }
 
@@ -88,12 +98,12 @@ public class MitarbeiterInterfaceController implements Initializable {
 
     private boolean checkInputs() {
         return 
-    mitarbeiterVornameTextField.getText().trim().isEmpty() &&
-    mitarbeiterNameTextField.getText().trim().isEmpty() &&
-    mitarbeiterAdresseTextField.getText().trim().isEmpty() &&
-    mitarbeiterTelefonTextField.getText().trim().isEmpty() &&
-    mitarbeiterGeburtsdatumDatePicker.getValue() == null &&
-    mitarbeiterGeschlechtChoiceBox.getValue() == null;
+    !mitarbeiterVornameTextField.getText().trim().isEmpty() &&
+    !mitarbeiterNameTextField.getText().trim().isEmpty() &&
+    !mitarbeiterAdresseTextField.getText().trim().isEmpty() &&
+    !mitarbeiterTelefonTextField.getText().trim().isEmpty() &&
+    mitarbeiterGeburtsdatumDatePicker.getValue() != null &&
+    mitarbeiterGeschlechtChoiceBox.getValue() != null;
         
     }
     

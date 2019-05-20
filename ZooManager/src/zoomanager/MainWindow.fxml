@@ -92,7 +92,23 @@
                   </Tab>
                   <Tab text="Veranstaltungen">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="veranstaltungHinzufuegenButton" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#openAddVeranstaltungWindow" text="Veranstaltung hinzufügen" />
+                              <Button layoutX="174.0" layoutY="332.0" mnemonicParsing="false" text="Veranstaltung entfernen" />
+                              <TableView fx:id="veranstaltungTable" layoutX="14.0" layoutY="14.0" prefHeight="307.0" prefWidth="619.0">
+                                <columns>
+                                  <TableColumn fx:id="veranstaltungTableZeitCol" prefWidth="29.999999046325684" text="Zeit" />
+                                  <TableColumn fx:id="veranstaltungTableMontag" prefWidth="84.0" resizable="false" text="Montag" />
+                                    <TableColumn fx:id="veranstaltungTableDienstag" prefWidth="84.0" resizable="false" text="Dienstag" />
+                                    <TableColumn fx:id="veranstaltungTableMittwoch" prefWidth="84.0" resizable="false" text="Mittwoch" />
+                                    <TableColumn fx:id="veranstaltungTableDonnerstag" prefWidth="84.0" resizable="false" text="Donnerstag" />
+                                    <TableColumn fx:id="veranstaltungTableFreitag" prefWidth="84.0" resizable="false" text="Freitag" />
+                                    <TableColumn fx:id="veranstaltungTableSamstag" prefWidth="84.0" resizable="false" text="Samstag" />
+                                    <TableColumn fx:id="veranstaltungTableSonntag" prefWidth="84.0" resizable="false" text="Sonntag" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
                     </content>
                   </Tab>
                   <Tab text="Gehege">
