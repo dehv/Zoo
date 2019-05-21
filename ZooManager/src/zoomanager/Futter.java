@@ -9,6 +9,41 @@ package zoomanager;
  *
  * @author David Brunschier
  */
-class Futter {
+public class Futter {
+    private float futtermenge;
+    private String futtersorte;
+    private String lagerungsart;
+    
+    public Futter (float futtermenge, String futtersorte, String lagerungsart) {
+        this.futtermenge = futtermenge;
+        this.futtersorte = futtersorte;
+        this.lagerungsart = lagerungsart;
+    }
+    
+    public float getFuttermenge(){
+        return futtermenge;
+    }
+    
+    public void setFuttermenge(float futtermenge) {
+        this.futtermenge = futtermenge;
+    }
+    
+    public String getFuttersorte() {
+        return futtersorte;
+    }
+    
+    public void setFuttersorte(String futtersorte) {
+        this.futtersorte = futtersorte; 
+    }
+    
+    public String getLagerungsart(){
+        return lagerungsart;
+    }
+    
+    public void setLagerungsart(String lagerungsart){
+        this.lagerungsart = lagerungsart;
+    }
+    
     
 }
+
