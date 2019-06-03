@@ -1,36 +1,49 @@
 package zoomanager;
 
+import java.time.LocalDate;
+
 
 public class Tier extends Lebewesen {
-    private int groesse;
-    private int gewicht;
+    private String groesse;
+    private String gewicht;
     private String art;
     private int futterstunde;
     private int futterminute;
-    private int idnummer;
+    private String idnummer;
+
+    public Tier(String name, String art, String idnummer, String groesse, String gewicht, LocalDate geburtsdatum, Geschlecht geschlecht) {
+        this.art = art;
+        super.setName(name);
+        this.idnummer = idnummer;
+        this.groesse = groesse;
+        this.gewicht = gewicht;
+        super.setGeburtstag(geburtsdatum);
+        super.setGeschlecht(geschlecht);
+        
+    }
     
 
-    public int getIdnummer() {
+    public String getIdnummer() {
         return idnummer;
     }
 
-    public void setIdnummer(int idnummer) {
+    public void setIdnummer(String idnummer) {
         this.idnummer = idnummer;
     }
 
-    public int getGroesse() {
+    public String getGroesse() {
         return groesse;
     }
 
-    public void setGroesse(int groesse) {
+    public void setGroesse(String groesse) {
         this.groesse = groesse;
     }
 
-    public int getGewicht() {
+    public String getGewicht() {
         return gewicht;
     }
 
-    public void setGewicht(int gewicht) {
+    public void setGewicht(String gewicht) {
         this.gewicht = gewicht;
     }
 
