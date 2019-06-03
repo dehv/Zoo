@@ -27,7 +27,7 @@ import zoomanager.ZooManager;
 /**
  * FXML Controller class
  *
- * @author $TH5J00-I3TNS7R3KADS
+ * @author Jonas Todt
  */
 public class TierInterfaceController implements Initializable {
 
@@ -40,9 +40,11 @@ public class TierInterfaceController implements Initializable {
     @FXML
     private TextField tierIdNummerTextField;
     @FXML
-    private DatePicker tierGeburtsdatumDatePicker;
-    @FXML
     private TextField tierGroesseTextField;
+    @FXML
+    private TextField tierGewichtTextField;
+    @FXML
+    private DatePicker tierGeburtsdatumDatePicker;
     @FXML
     private ChoiceBox<?> tierGeschlechtChoiceBox;
     @FXML
@@ -56,23 +58,21 @@ public class TierInterfaceController implements Initializable {
         this.main = zooManager;
     }
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-       if (checkInputs()) {
-        String art = tierArtTextField.getText();
+
+  
+
+    @FXML
+    private void tierFertigButtonAction(ActionEvent event) {
+               if (checkInputs()) {
         String name = tierNameTextField.getText();
+        String art = tierArtTextField.getText();
         String idnummer = tierIdNummerTextField.getText();
-        String telefonnummer = mitarbeiterTelefonTextField.getText();
-        String personalnummer = mitarbeiterPersonalnummerTextField.getText();
-        //TODO beruf enum??
-        String beruf = "Noch nicht implementiert!";
-        LocalDate geburtstag = mitarbeiterGeburtsdatumDatePicker.getValue();
-        Geschlecht geschlecht = (Geschlecht) mitarbeiterGeschlechtChoiceBox.getValue();
-        main.addMitarbeiter(new Mitarbeiter(vorname, name, addresse, telefonnummer, beruf, geburtstag, geschlecht, personalnummer));
-        Stage stage = (Stage) mitarbeiterAbbrechenButton.getScene().getWindow();
+        String groesse = tierGroesseTextField.getText();
+        String gewicht = tierGewichtTextField.getText();
+        LocalDate geburtsdatum = tierGeburtsdatumDatePicker.getValue();
+        Geschlecht geschlecht = (Geschlecht) tierGeschlechtChoiceBox.getValue();
+        main.addTier(new Tier(name, art, idnummer, groesse,gewicht, geburtsdatum, geschlecht));
+        Stage stage = (Stage) tierAbbrechenButton.getScene().getWindow();
         stage.close();
         }
         else {
@@ -83,14 +83,30 @@ public class TierInterfaceController implements Initializable {
             
             alert.showAndWait();
         }
-    }    
+    }  
 
-    @FXML
-    private void tierFertigButtonAction(ActionEvent event) {
-    }
+
+
 
     @FXML
     private void tierAbbrechenButtonAction(ActionEvent event) {
+        Stage stage = (Stage) tierAbbrechenButton.getScene().getWindow();
+        stage.close();
     }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        tierGeschlechtChoiceBox.getItems().addAll(Geschlecht.values());
+    }
+
+        private boolean checkInputs() {
+            return 
+    !tierArtTextField.getText().trim().isEmpty() &&
+    !tierNameTextField.getText().trim().isEmpty() &&
+    !tierIdNummerTextField.getText().trim().isEmpty() &&
+    !tierGroesseTextField.getText().trim().isEmpty() &&
+    !tierGewichtTextField.getText().trim().isEmpty() &&
+    tierGeburtsdatumDatePicker.getValue() != null &&
+    tierGeschlechtChoiceBox.getValue() != null;
     
+    }
 }
