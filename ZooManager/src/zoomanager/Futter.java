@@ -7,14 +7,15 @@ package zoomanager;
 
 /**
  *
- * @author David Brunschier
+ * @author Philipp Uesbeck
  */
 public class Futter {
     private float futtermenge;
     private String futtersorte;
-    private String lagerungsart;
+    private Lagerungsart lagerungsart;
     
-    public Futter (float futtermenge, String futtersorte, String lagerungsart) {
+    public Futter (float futtermenge, String futtersorte, Lagerungsart 
+                   lagerungsart) {
         this.futtermenge = futtermenge;
         this.futtersorte = futtersorte;
         this.lagerungsart = lagerungsart;
@@ -36,11 +37,11 @@ public class Futter {
         this.futtersorte = futtersorte; 
     }
     
-    public String getLagerungsart(){
+    public Lagerungsart getLagerungsart(){
         return lagerungsart;
     }
     
-    public void setLagerungsart(String lagerungsart){
+    public void setLagerungsart(Lagerungsart lagerungsart){
         this.lagerungsart = lagerungsart;
     }
     
