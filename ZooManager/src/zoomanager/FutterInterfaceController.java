@@ -6,6 +6,7 @@
 package zoomanager;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,3 +41,24 @@ public class FutterInterfaceController implements Initializable {
         this.main = zooManager;
     }
 }
+
+
+@FXML
+    private void futterFertigButtonAction(ActionEvent event) {
+        if (checkInputs()) {
+        String futtersorte = futterFuttersorteTextField.getText();
+        float futtermenge = futterFuttermengeTextField.getText();
+        Lagerungsart lagerungsart = (Lagerungsart) futterLagerungsartChoiceBox.getValue();
+        main.addFutter(new Futter(futtersorte, futtermenge, lagerungsart));
+        Stage stage = (Stage) futterAbbrechenButton.getScene().getWindow();
+        stage.close();
+        }
+        else {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fehlende Werte");
+            alert.setHeaderText(null);
+            alert.setContentText("Bitte geben Sie für alle Felder einen Wert ein und versuchen Sie es nochmal!");
+            
+            alert.showAndWait();
+        }
+    }
