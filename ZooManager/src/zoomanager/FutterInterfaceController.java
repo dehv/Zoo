@@ -13,9 +13,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 /**
@@ -40,7 +47,7 @@ public class FutterInterfaceController implements Initializable {
     void setMain (ZooManager zooManager){
         this.main = zooManager;
     }
-}
+
 
 
 @FXML
@@ -62,3 +69,25 @@ public class FutterInterfaceController implements Initializable {
             alert.showAndWait();
         }
     }
+
+@FXML
+    private void futterAbbrechenButtonAction(ActionEvent event) {
+        Stage stage = (Stage) futterAbbrechenButton.getScene().getWindow();
+        stage.close();
+    }
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        futterLagerungsartChoiceBox.getItems().addAll(Lagerungsart.values());
+    }
+
+    private boolean checkInputs() {
+        return 
+    !futterFuttersorteTextField.getText().trim().isEmpty() &&
+    !futterFuttermengeTextField.getText().trim().isEmpty() &&
+     futterLagerungsartChoiceBox.getValue() != null;
+        
+    }
+    
+    
+}
