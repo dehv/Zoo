@@ -54,7 +54,7 @@ public class FutterInterfaceController implements Initializable {
     private void futterFertigButtonAction(ActionEvent event) {
         if (checkInputs()) {
         String futtersorte = futterFuttersorteTextField.getText();
-        float futtermenge = futterFuttermengeTextField.getText();
+        String futtermenge = futterFuttermengeTextField.getText();
         Lagerungsart lagerungsart = (Lagerungsart) futterLagerungsartChoiceBox.getValue();
         main.addFutter(new Futter(futtersorte, futtermenge, lagerungsart));
         Stage stage = (Stage) futterAbbrechenButton.getScene().getWindow();
