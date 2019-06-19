@@ -17,6 +17,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import zoomanager.Futter;
 import zoomanager.Mitarbeiter;
 import zoomanager.ZooManager;
 
@@ -149,7 +150,25 @@ public class InterfaceController {
     }
     
     
+    @FXML
+    private void openAddFutterWindow(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AddFutterWindow.fxml"));
+        Parent root = (Parent) loader.load();
+        FutterInterfaceController ctrl = loader.getController();
+        ctrl.setMain(main);
+        
+       
+        
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/style.css");
+        
+        Stage stage = new Stage();
+        stage.setTitle("Neues Futter erstellen");
+        stage.setScene(scene);
+        stage.show();
+    }
     
     
     
 }
+ 
