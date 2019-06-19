@@ -42,7 +42,7 @@ public class FutterInterfaceController implements Initializable {
     @FXML
     private TextField futterFuttermengeTextField;
     @FXML 
-    private ChoiceBox<Lagerungsart> futterLagerungsartCoiceBox;
+    private ChoiceBox<Lagerungsart> futterLagerungsartChoiceBox;
     
     void setMain (ZooManager zooManager){
         this.main = zooManager;
