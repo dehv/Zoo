@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoomanager.InterfaceController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoomanager.InterfaceController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -81,11 +81,16 @@
                            <children>
                               <TableView fx:id="tiereTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                  <columns>
-                                    <TableColumn prefWidth="75.0" text="C1" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="Art" />
+                                    <TableColumn prefWidth="75.0" text="Name" />
+                                    <TableColumn prefWidth="75.0" text="ID-Nummer" />
+                                    <TableColumn prefWidth="93.0" text="Größe" />
+                                    <TableColumn prefWidth="91.0" text="Gewicht" />
+                                    <TableColumn prefWidth="124.0" text="Geburtsdatum" />
+                                    <TableColumn prefWidth="89.0" text="Geschlecht" />
                                  </columns>
                               </TableView>
-                              <Button fx:id="tierHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                              <Button fx:id="tierHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#openAddTierWindow" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
                            </children>
                         </AnchorPane>
                      </content>
@@ -117,8 +122,10 @@
                            <children>
                               <TableView fx:id="gehegeTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                  <columns>
-                                    <TableColumn prefWidth="75.0" text="C1" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="130.0" text="Name" />
+                                    <TableColumn prefWidth="98.0" text="Anzahl Tiere" />
+                                    <TableColumn prefWidth="92.0" text="Größe" />
+                                    <TableColumn prefWidth="123.0" text="Bewohner" />
                                  </columns>
                               </TableView>
                               <Button fx:id="gehegeHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />

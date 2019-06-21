@@ -46,7 +46,7 @@ public class TierInterfaceController implements Initializable {
     @FXML
     private DatePicker tierGeburtsdatumDatePicker;
     @FXML
-    private ChoiceBox<?> tierGeschlechtChoiceBox;
+    private ChoiceBox<Geschlecht> tierGeschlechtChoiceBox;
     @FXML
     private TableView<?> tierFutterTable;
     @FXML
@@ -71,7 +71,7 @@ public class TierInterfaceController implements Initializable {
         String gewicht = tierGewichtTextField.getText();
         LocalDate geburtsdatum = tierGeburtsdatumDatePicker.getValue();
         Geschlecht geschlecht = (Geschlecht) tierGeschlechtChoiceBox.getValue();
-        main.addTier(new Tier(name, art, idnummer, groesse,gewicht, geburtsdatum, geschlecht));
+        main.addTier(new Tier(name,art,idnummer,groesse,gewicht,geburtsdatum,geschlecht));
         Stage stage = (Stage) tierAbbrechenButton.getScene().getWindow();
         stage.close();
         }

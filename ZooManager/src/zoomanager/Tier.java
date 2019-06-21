@@ -12,8 +12,8 @@ public class Tier extends Lebewesen {
     private String idnummer;
 
     public Tier(String name, String art, String idnummer, String groesse, String gewicht, LocalDate geburtsdatum, Geschlecht geschlecht) {
-        this.art = art;
         super.setName(name);
+        this.art = art;
         this.idnummer = idnummer;
         this.groesse = groesse;
         this.gewicht = gewicht;

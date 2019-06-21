@@ -7,6 +7,7 @@ package zoomanager;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.Month;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -208,6 +209,7 @@ public class ZooManager extends Application {
         mitarbeiter.add(new Mitarbeiter("David","Brunschier","An der Stadtlandwehr 33", "012345","help", LocalDate.of(1999,11,27), Geschlecht.MÄNNLICH, "420"));
         mitarbeiter.add(new Mitarbeiter("Test","Testie","An der Stadtlandwehr 33", "012345","help", LocalDate.now(), Geschlecht.WEIBLICH, "69"));
         gehege.add(new Gehege("Testgehege", 20.0f, tiere));
+        tiere.add(new Tier ("Harry", "Hirsch", "20123","1,00 m", "100 kg", LocalDate.of(2015, Month.MARCH, 5),Geschlecht.MÄNNLICH ));
     }
     
     
