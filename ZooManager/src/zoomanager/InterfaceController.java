@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package zoomanager;
 
 import java.io.IOException;
@@ -29,67 +24,107 @@ public class InterfaceController {
     
     public ZooManager main;
     @FXML
-    TableView<Mitarbeiter> homeMitarbeiterTable;
+    TableView<Mitarbeiter>                   homeMitarbeiterTable;
     @FXML
-    TableColumn<Mitarbeiter, String> homeMitarbeiterNameCol;
+    TableColumn<Mitarbeiter, String>         homeMitarbeiterNameCol;
     @FXML
-    TableColumn<Mitarbeiter, String> homeMitarbeiterVornameCol;
+    TableColumn<Mitarbeiter, String>         homeMitarbeiterVornameCol;
     @FXML
-    TableColumn<Mitarbeiter, ?> homeMitarbeiterArbeitszeitCol;
+    TableColumn<Mitarbeiter, ?>              homeMitarbeiterArbeitszeitCol; 
     @FXML
-    private TableView<?> homeTiereTable;
+    private TableView<?>                     homeTiereTable;
     @FXML
-    ListView<Veranstaltung> homeVeranstaltungList;
+    TableColumn<Tier, String>                homeTierArtCol;
     @FXML
-     TableView<Mitarbeiter> mitarbeiterTable;
+    TableColumn<Tier, String>                homeTierNameCol;
     @FXML
-    private Button mitarbeiterHinzufuegenButton;
+    TableColumn<Tier, ?>                     homeTierGehegeCol;
     @FXML
-    private TableView<?> tiereTable;
+    ListView<Veranstaltung>                  homeVeranstaltungList;
+    
+    //Mitarbeiter-Reiter
     @FXML
-    private Button tierHinzufuegenButton;
+    TableView<Mitarbeiter>                   mitarbeiterTable;
     @FXML
-    private TableView<?> gehegeTable;
+    TableColumn<Mitarbeiter, String>         mitarbeiterNameCol;
     @FXML
-    private Button gehegeHinzufuegenButton;
+    TableColumn<Mitarbeiter, String>         mitarbeiterVornameCol;
+    @FXML  
+    TableColumn<Mitarbeiter, String>         mitarbeiterPersonalnummerCol;
     @FXML
-    private TableView<?> futterTable;
+    TableColumn<Mitarbeiter, String>         mitarbeiterArbeitszeitCol;
     @FXML
-    private Button futterHinzufuegenButton;
+    TableColumn<Mitarbeiter, String>         mitarbeiterTelefonCol;
     @FXML
-    TableColumn<Mitarbeiter, String> mitarbeiterNameCol;
+    TableColumn<Mitarbeiter, LocalDate>      mitarbeiterGeburtsdatumCol;
     @FXML
-    TableColumn<Mitarbeiter, String> mitarbeiterVornameCol;
+    TableColumn<Mitarbeiter, String>         mitarbeiterBerufCol;
     @FXML
-    TableColumn<Mitarbeiter, String> mitarbeiterPersonalnummerCol;
+    private Button                           mitarbeiterHinzufuegenButton;
+    
+    //Tier-Reiter
     @FXML
-    TableColumn<Mitarbeiter, String> mitarbeiterArbeitszeitCol;
+    private TableView<?>                     tiereTable;
     @FXML
-    TableColumn<Mitarbeiter, String> mitarbeiterTelefonCol;
+    TableColumn<Tier, String>                tierArtCol;
     @FXML
-    TableColumn<Mitarbeiter, LocalDate> mitarbeiterGeburtsdatumCol;
+    TableColumn<Tier, String>                tierNameCol;
     @FXML
-    TableColumn<Mitarbeiter, String> mitarbeiterBerufCol;
+    TableColumn<Tier, String>                tierIdnummerCol;
     @FXML
-    private Button veranstaltungHinzufuegenButton;
+    TableColumn<Tier, String>                tierGroesseCol;
     @FXML
-    TableView<TimeTable> veranstaltungTable;
+    TableColumn<Tier, String>                tierGewichtCol;
     @FXML
-    TableColumn<TimeTable, Integer> veranstaltungTableZeitCol;
+    TableColumn<Tier, LocalDate>             tierGeburtsdatumCol;
+    @FXML
+    TableColumn<Tier, Geschlecht>            tierGeschlechtCol;
+    @FXML
+    private Button                           tierHinzufuegenButton;
+    
+    //Gehege-Reiter
+    @FXML
+    private TableView<?>                     gehegeTable;
+    @FXML
+    TableColumn<Gehege, String>              gehegeNameCol;
+    @FXML
+    TableColumn<Gehege, String>              gehegeGroesseCol;
+    @FXML
+    TableColumn<Gehege, Integer >            gehegeAnzahlTiereCol;   
+    @FXML
+    private Button                           gehegeHinzufuegenButton;
+    
+    @FXML
+    private TableView<?>                     futterTable;
+    @FXML
+    TableColumn<Futter, String>              futterFuttersorteCol;
+    @FXML
+    TableColumn<Futter, String>              futterFuttermengeCol;
+    @FXML
+    TableColumn<Futter, Lagerungsart>        futterLagerungsartCol;
+    @FXML
+    private Button                           futterHinzufuegenButton;
+
+    @FXML
+    TableView<TimeTable>                     veranstaltungTable;
+    @FXML
+    TableColumn<TimeTable, Integer>          veranstaltungTableZeitCol;
     @FXML
      TableColumn<TimeTable, Veranstaltung[]> veranstaltungTableMontag;
     @FXML
-     TableColumn<TimeTable, Veranstaltung> veranstaltungTableDienstag;
+     TableColumn<TimeTable, Veranstaltung>   veranstaltungTableDienstag;
     @FXML
-     TableColumn<TimeTable, Veranstaltung> veranstaltungTableMittwoch;
+     TableColumn<TimeTable, Veranstaltung>   veranstaltungTableMittwoch;
     @FXML
-     TableColumn<TimeTable, Veranstaltung> veranstaltungTableDonnerstag;
+     TableColumn<TimeTable, Veranstaltung>   veranstaltungTableDonnerstag;
     @FXML
-     TableColumn<TimeTable, Veranstaltung> veranstaltungTableFreitag;
+     TableColumn<TimeTable, Veranstaltung>   veranstaltungTableFreitag;
     @FXML
-     TableColumn<TimeTable, Veranstaltung> veranstaltungTableSamstag;
+     TableColumn<TimeTable, Veranstaltung>   veranstaltungTableSamstag;
     @FXML
-     TableColumn<TimeTable, Veranstaltung> veranstaltungTableSonntag;
+     TableColumn<TimeTable, Veranstaltung>   veranstaltungTableSonntag;
+    @FXML
+    private Button                           veranstaltungHinzufuegenButton;
     
     void setMain(ZooManager zooManager) {
         this.main = zooManager;
@@ -117,7 +152,8 @@ public class InterfaceController {
     private void openAddTierWindow(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AddTierWindow.fxml"));
         Parent root = (Parent) loader.load();
-        TierInterfaceController ctrl = loader.getController();
+        zoomanager.TierInterfaceController ctrl;
+        ctrl = loader.getController();
         ctrl.setMain(main);
         
        
@@ -131,6 +167,23 @@ public class InterfaceController {
         stage.show();
     }
     
+            @FXML
+    private void openAddFutterWindow(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AddFutterWindow.fxml"));
+        Parent root = (Parent) loader.load();
+        zoomanager.FutterInterfaceController ctrl = loader.getController();
+        ctrl.setMain(main);
+        
+       
+        
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/style.css");
+        
+        Stage stage = new Stage();
+        stage.setTitle("Neues Futter erstellen");
+        stage.setScene(scene);
+        stage.show();
+    }
  
     /*
     

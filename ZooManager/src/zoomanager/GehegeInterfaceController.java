@@ -46,7 +46,7 @@ public class GehegeInterfaceController implements Initializable {
         if (checkInputs()) {
         String name = gehegeNameTextField.getText();
         String groesse = gehegeGroesseTextField.getText();
-        main.addGehege(new Gehege(name, groesse,bewohner ));
+        main.addGehege(new Gehege(name, groesse));
         Stage stage = (Stage) gehegeAbbrechenButton.getScene().getWindow();
         stage.close();
         }
@@ -59,6 +59,20 @@ public class GehegeInterfaceController implements Initializable {
             alert.showAndWait();
         }
     }
+    
+        @FXML
+    private void gehegeAbbrechenButtonAction(ActionEvent event) {
+        Stage stage = (Stage) gehegeAbbrechenButton.getScene().getWindow();
+        stage.close();
+    }
+    
+        private boolean checkInputs() {
+        return 
+    !gehegeNameTextField.getText().trim().isEmpty() &&
+    !gehegeGroesseTextField.getText().trim().isEmpty();
+        
+    }
+    
      //Initializes the controller class.
     @Override
     public void initialize(URL url, ResourceBundle rb) {

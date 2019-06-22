@@ -206,10 +206,11 @@ public class ZooManager extends Application {
     }
 
     private void insertTestData() {
-        mitarbeiter.add(new Mitarbeiter("David","Brunschier","An der Stadtlandwehr 33", "012345","help", LocalDate.of(1999,11,27), Geschlecht.MÄNNLICH, "420"));
-        mitarbeiter.add(new Mitarbeiter("Test","Testie","An der Stadtlandwehr 33", "012345","help", LocalDate.now(), Geschlecht.WEIBLICH, "69"));
-        gehege.add(new Gehege("Testgehege", 20.0f, tiere));
-        tiere.add(new Tier ("Harry", "Hirsch", "20123","1,00 m", "100 kg", LocalDate.of(2015, Month.MARCH, 5),Geschlecht.MÄNNLICH ));
+        mitarbeiter.add(new Mitarbeiter("David","Brunschier","An der Stadtlandwehr 33", "012345","help", LocalDate.of(1999,11,27), Geschlecht.MÄNNLICH, "456"));
+        mitarbeiter.add(new Mitarbeiter("Test","Testie","An der Stadtlandwehr 33", "012345","help", LocalDate.now(), Geschlecht.WEIBLICH, "123"));
+        gehege.add(new Gehege("Testgehege", "20 qm", tiere));
+        tiere.add(new Tier ("Harry", "Hirsch", "20123","1,00 m", "100 kg", LocalDate.of(2015, Month.MARCH, 7),Geschlecht.MÄNNLICH ));
+        futter.add(new Futter ("100 kg"," Gemüse", Lagerungsart.Silos));
     }
     
     

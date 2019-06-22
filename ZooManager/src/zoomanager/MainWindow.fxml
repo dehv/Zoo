@@ -42,9 +42,9 @@
                               </TableView>
                               <TableView fx:id="homeTiereTable" layoutX="222.0" layoutY="56.0" prefHeight="303.0" prefWidth="200.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Name" />
-                                  <TableColumn prefWidth="75.0" text="Gehege" />
-                                    <TableColumn prefWidth="75.0" text="Futterzeit" />
+                                  <TableColumn fx:id="homeTierArtCol" prefWidth="61.0" text="Art" />
+                                  <TableColumn fx:id="homeTierNameCol" prefWidth="56.0" text="Name" />
+                                    <TableColumn fx:id="homeTierGehegeCol" prefWidth="108.0" text="Gehege" />
                                 </columns>
                               </TableView>
                               <Text layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiter" wrappingWidth="198.80337142944336" />
@@ -81,13 +81,13 @@
                            <children>
                               <TableView fx:id="tiereTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                  <columns>
-                                    <TableColumn prefWidth="75.0" text="Art" />
-                                    <TableColumn prefWidth="75.0" text="Name" />
-                                    <TableColumn prefWidth="75.0" text="ID-Nummer" />
-                                    <TableColumn prefWidth="93.0" text="Größe" />
-                                    <TableColumn prefWidth="91.0" text="Gewicht" />
-                                    <TableColumn prefWidth="124.0" text="Geburtsdatum" />
-                                    <TableColumn prefWidth="89.0" text="Geschlecht" />
+                                    <TableColumn fx:id="TierArtCol" prefWidth="75.0" text="Art" />
+                                    <TableColumn fx:id="TierNameCol" prefWidth="75.0" text="Name" />
+                                    <TableColumn fx:id="TierIdnummerCol" prefWidth="75.0" text="ID-Nummer" />
+                                    <TableColumn fx:id="TierGroesseCol" prefWidth="93.0" text="Größe" />
+                                    <TableColumn fx:id="TierGewichtCol" prefWidth="91.0" text="Gewicht" />
+                                    <TableColumn fx:id="TierGeburtsdatumCol" prefWidth="124.0" text="Geburtsdatum" />
+                                    <TableColumn fx:id="TierGeschlechtCol" prefWidth="89.0" text="Geschlecht" />
                                  </columns>
                               </TableView>
                               <Button fx:id="tierHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#openAddTierWindow" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
@@ -122,10 +122,9 @@
                            <children>
                               <TableView fx:id="gehegeTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                  <columns>
-                                    <TableColumn prefWidth="130.0" text="Name" />
-                                    <TableColumn prefWidth="98.0" text="Anzahl Tiere" />
-                                    <TableColumn prefWidth="92.0" text="Größe" />
-                                    <TableColumn prefWidth="123.0" text="Bewohner" />
+                                    <TableColumn fx:id="gehegeNameCol" prefWidth="205.0" text="Name" />
+                                    <TableColumn fx:id="gehegeAnzahlTiereCol" prefWidth="194.0" text="Anzahl Tiere" />
+                                    <TableColumn fx:id="gehegeGroesseCol" minWidth="0.0" prefWidth="224.0" text="Größe" />
                                  </columns>
                               </TableView>
                               <Button fx:id="gehegeHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
@@ -139,11 +138,12 @@
                            <children>
                               <TableView fx:id="futterTable" layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                  <columns>
-                                    <TableColumn prefWidth="75.0" text="C1" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn fx:id="futterFuttersorteCol" prefWidth="190.0" text="Futtersorte" />
+                                    <TableColumn fx:id="futterFuttermengeCol" prefWidth="215.0" text="Futtermenge" />
+                                    <TableColumn fx:id="futterLagerungsartCol" prefWidth="218.0" text="Lagerungsart" />
                                  </columns>
                               </TableView>
-                              <Button fx:id="futterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
+                              <Button fx:id="futterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#openAddFutterWindow" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />
                            </children>
                         </AnchorPane>
                      </content>

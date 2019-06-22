@@ -14,15 +14,21 @@ import javafx.collections.ObservableList;
 public class Gehege {
     private String name;
     private int anzahlTiere;
-    private float groesse;
+    private String groesse;
     private ObservableList<Tier> bewohner;
 
-    public Gehege(String name, float groesse, ObservableList<Tier> bewohner) {
+    public Gehege(String name, String groesse, ObservableList<Tier> bewohner) {
         this.name = name;
         this.anzahlTiere = bewohner.size();
         this.groesse = groesse;
         this.bewohner = bewohner;
     }
+
+    Gehege(String name, String groesse) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
     public String getName() {
         return name;
@@ -40,11 +46,11 @@ public class Gehege {
         this.anzahlTiere = bewohner.size();
     }
 
-    public float getGroesse() {
+    public String getGroesse() {
         return groesse;
     }
 
-    public void setGroesse(float groesse) {
+    public void setGroesse(String groesse) {
         this.groesse = groesse;
     }
 
