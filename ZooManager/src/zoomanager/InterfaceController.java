@@ -64,7 +64,7 @@ public class InterfaceController {
     
     //Tier-Reiter
     @FXML
-    private TableView<?>                     tiereTable;
+    private TableView<Tier>                  tiereTable;
     @FXML
     TableColumn<Tier, String>                tierArtCol;
     @FXML
@@ -152,8 +152,7 @@ public class InterfaceController {
     private void openAddTierWindow(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AddTierWindow.fxml"));
         Parent root = (Parent) loader.load();
-        zoomanager.TierInterfaceController ctrl;
-        ctrl = loader.getController();
+        zoomanager.TierInterfaceController ctrl = loader.getController();
         ctrl.setMain(main);
         
        
@@ -184,26 +183,27 @@ public class InterfaceController {
         stage.setScene(scene);
         stage.show();
     }
- 
-    /*
     
-    VERSUCH TIERWINDOW ZU ÖFFNEN 
-    
-     @FXML
-    private void openAddTierWindow(ActionEvent event) {
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddTierWindow.fxml"));
-            Parent root1 = (Parent) loader.load();
-            TierInterfaceController ctrl = loader.getController();
-            Stage stage = new Stage ();
-            stage.setTitle("Neues Tier hinzufügen");
-            stage.setScene(new Scene (root1));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("Fenster kann nicht geladen werden");
-        }
+                @FXML
+    private void openAddGehegeWindow(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AddGehegeWindow.fxml"));
+        Parent root = (Parent) loader.load();
+        zoomanager.GehegeInterfaceController ctrl = loader.getController();
+        ctrl.setMain(main);
+        
+       
+        
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/style.css");
+        
+        Stage stage = new Stage();
+        stage.setTitle("Neues Futter erstellen");
+        stage.setScene(scene);
+        stage.show();
     }
-   */ 
+    
+    
+ 
     @FXML
     private void openAddVeranstaltungWindow(ActionEvent event) throws IOException {
         

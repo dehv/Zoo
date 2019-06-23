@@ -110,6 +110,9 @@ public class ZooManager extends Application {
     public ObservableList<Gehege> getGehegeListe() {
         return gehege;
     }
+    public ObservableList<Futter> getFutterListe() {
+        return futter;
+    }
     
     
     
@@ -137,9 +140,40 @@ public class ZooManager extends Application {
             interfaceController.homeMitarbeiterVornameCol.setCellValueFactory(
                     new PropertyValueFactory<Mitarbeiter, String>("vorname")
             );
+            
+            interfaceController.homeTierArtCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("art")
+            );
+            interfaceController.homeTierNameCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("name")
+            );
+            interfaceController.homeTierGehegeCol.setCellValueFactory(
+                    new PropertyValueFactory<>("gehege")
+            );
 //            interfaceController.homeMitarbeiterArbeitszeitCol.setCellValueFactory(
 //                    new PropertyValueFactory<Mitarbeiter, String>("name")
 //            );
+        /*
+            // Tabelle auf der Tierseite erzeugt Null Pointer Excption
+            interfaceController.tierArtCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("art")                    
+            );
+            interfaceController.tierNameCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("name")
+            );
+            interfaceController.tierIdnummerCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("idnummer")
+            );
+            interfaceController.tierGroesseCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("groesse")
+            );
+            interfaceController.tierGewichtCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, String>("gewicht")
+            );
+            interfaceController.tierGeschlechtCol.setCellValueFactory(
+                    new PropertyValueFactory<Tier, Geschlecht>("geschlecht")
+            );
+          */
             // Tabelle auf der Mitarbeiterseite
             interfaceController.mitarbeiterNameCol.setCellValueFactory(
                     new PropertyValueFactory<Mitarbeiter, String>("name")
@@ -206,7 +240,7 @@ public class ZooManager extends Application {
     }
 
     private void insertTestData() {
-        mitarbeiter.add(new Mitarbeiter("David","Brunschier","An der Stadtlandwehr 33", "012345","help", LocalDate.of(1999,11,27), Geschlecht.MÄNNLICH, "456"));
+        mitarbeiter.add(new Mitarbeiter("Testie","McTestface","Weg 1", "012345","help", LocalDate.of(1999,11,27), Geschlecht.MÄNNLICH, "456"));
         mitarbeiter.add(new Mitarbeiter("Test","Testie","An der Stadtlandwehr 33", "012345","help", LocalDate.now(), Geschlecht.WEIBLICH, "123"));
         gehege.add(new Gehege("Testgehege", "20 qm", tiere));
         tiere.add(new Tier ("Harry", "Hirsch", "20123","1,00 m", "100 kg", LocalDate.of(2015, Month.MARCH, 7),Geschlecht.MÄNNLICH ));
