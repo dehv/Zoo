@@ -134,17 +134,17 @@ public class TierInterfaceController implements Initializable {
                 "16:00",
                 "17:00",
                 "18:00");
-        if (!main.getFutterListe().isEmpty()) {
+        try{if (!main.getFutterListe().isEmpty()) {
             tierFutterChoiceBox.getItems().setAll(main.getFutterListe());
-        } else {
-            tierFutterChoiceBox.setDisable(true);
+        }}// else {
+          catch(Exception e) {  tierFutterChoiceBox.setDisable(true);
             System.out.print("Keine Mitarbeiter in der Liste!");
         }
         
-        if (!main.getGehegeListe().isEmpty()) {
+        try{if (!main.getGehegeListe().isEmpty()) {
             tierGehegeChoiceBox.getItems().addAll(main.getGehegeListe());
-        } else {
-            tierGehegeChoiceBox.setDisable(true);
+        }}// else {
+            catch(Exception e) {tierGehegeChoiceBox.setDisable(true);
             System.out.print("Keine Gehege in der Liste!");
         }
         

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoomanager.InterfaceController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoomanager.InterfaceController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -63,11 +63,10 @@
                                 <columns>
                                   <TableColumn fx:id="mitarbeiterNameCol" prefWidth="69.99999713897705" text="Name" />
                                   <TableColumn fx:id="mitarbeiterVornameCol" prefWidth="75.3333511352539" text="Vorname" />
-                                    <TableColumn fx:id="mitarbeiterPersonalnummerCol" prefWidth="114.66664123535156" text="Personalnummer" />
-                                    <TableColumn fx:id="mitarbeiterArbeitszeitCol" prefWidth="81.33331298828125" text="Arbeitszeit" />
-                                    <TableColumn fx:id="mitarbeiterTelefonCol" prefWidth="77.99993896484375" text="Telefonnr." />
-                                    <TableColumn fx:id="mitarbeiterGeburtsdatumCol" prefWidth="84.66671752929688" text="Geburtsdatum" />
-                                    <TableColumn fx:id="mitarbeiterBerufCol" prefWidth="123.33331298828125" text="Berufsbezeichnung" />
+                                    <TableColumn fx:id="mitarbeiterPersonalnummerCol" prefWidth="134.0" text="Personalnummer" />
+                                    <TableColumn fx:id="mitarbeiterArbeitszeitCol" prefWidth="114.0" text="Arbeitszeit" />
+                                    <TableColumn fx:id="mitarbeiterTelefonCol" prefWidth="108.0" text="Telefonnr." />
+                                    <TableColumn fx:id="mitarbeiterGeburtsdatumCol" prefWidth="121.0" text="Geburtsdatum" />
                                 </columns>
                               </TableView>
                               <Button fx:id="mitarbeiterHinzufuegenButton" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#openAddMitarbeiterWindow" prefHeight="25.0" prefWidth="100.0" text="Hinzufügen" AnchorPane.bottomAnchor="6.3333333333333535" AnchorPane.leftAnchor="14.0" />

@@ -67,11 +67,9 @@ public class MitarbeiterInterfaceController implements Initializable {
         String addresse = mitarbeiterAdresseTextField.getText();
         String telefonnummer = mitarbeiterTelefonTextField.getText();
         String personalnummer = mitarbeiterPersonalnummerTextField.getText();
-        //TODO beruf enum??
-        String beruf = "Noch nicht implementiert!";
         LocalDate geburtstag = mitarbeiterGeburtsdatumDatePicker.getValue();
         Geschlecht geschlecht = (Geschlecht) mitarbeiterGeschlechtChoiceBox.getValue();
-        main.addMitarbeiter(new Mitarbeiter(vorname, name, addresse, telefonnummer, beruf, geburtstag, geschlecht, personalnummer));
+        main.addMitarbeiter(new Mitarbeiter(vorname, name, addresse, telefonnummer, geburtstag, geschlecht, personalnummer));
         Stage stage = (Stage) mitarbeiterAbbrechenButton.getScene().getWindow();
         stage.close();
         }

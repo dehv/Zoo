@@ -58,8 +58,6 @@ public class InterfaceController {
     @FXML
     TableColumn<Mitarbeiter, LocalDate>      mitarbeiterGeburtsdatumCol;
     @FXML
-    TableColumn<Mitarbeiter, String>         mitarbeiterBerufCol;
-    @FXML
     private Button                           mitarbeiterHinzufuegenButton;
     
     //Tier-Reiter

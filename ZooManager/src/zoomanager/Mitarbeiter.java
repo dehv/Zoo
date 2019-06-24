@@ -12,16 +12,14 @@ public class Mitarbeiter extends Lebewesen {
     private String vorname;
     private String telefonnummer;
     private String adresse;
-    private String beruf;
     private String personalnummer;
 
 
-    public Mitarbeiter(String vorname, String name, String addresse, String telefonnummer, String beruf, LocalDate geburtsdatum, Geschlecht geschlecht, String personalnummer) {
+    public Mitarbeiter(String vorname, String name, String addresse, String telefonnummer, LocalDate geburtsdatum, Geschlecht geschlecht, String personalnummer) {
         this.vorname = vorname;
         super.setName(name);
         this.adresse = adresse;
         this.telefonnummer = telefonnummer;
-        this.beruf = beruf;
         super.setGeburtstag(geburtsdatum);
         super.setGeschlecht(geschlecht);
         this.personalnummer = personalnummer;
@@ -90,14 +88,6 @@ public class Mitarbeiter extends Lebewesen {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
-    }
-
-    public String getBeruf() {
-        return beruf;
-    }
-
-    public void setBeruf(String beruf) {
-        this.beruf = beruf;
     }
     
     public String getName() {
